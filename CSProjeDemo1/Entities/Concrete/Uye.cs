@@ -10,7 +10,7 @@ namespace CSProjeDemo1.Entities.Concrete
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public int UyeNo { get; set; }
-        public List<Kitap> OduncKitaplarIdListesi { get; set; }
+        public List<Kitap>? OduncKitaplarIdListesi { get; set; }
 
         public Uye()
         {

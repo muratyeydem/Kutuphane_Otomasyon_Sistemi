@@ -51,7 +51,7 @@ namespace CSProjeDemo1.Entities.Concrete
 
         public void UyeKitaplariniGoruntule(Uye uye)
         {
-            foreach (var kitap in uye.OduncKitaplar)
+            foreach (var kitap in uye.OduncKitaplarIdListesi)
             {
                 // Uye'nin ödünç aldığı kitapları görüntüle
             }
