@@ -22,9 +22,14 @@ namespace CSProjeDemo1.Entities.Concrete
             if (kitap.Durum == Durum.OduncAlinabilir)
             {
                 kitap.Durum = Durum.OduncVerildi;
-                OduncKitaplarIdListesi.Add(kitap); 
+                OduncKitaplarIdListesi.Add(kitap);
+                Console.WriteLine("Kitap ödünç alındı: " + kitap.Baslik);
             }
-          
+            else
+            {
+                Console.WriteLine("Bu kitap ödünç alınamaz.");
+            }
+
         }
 
         public void KitapIadeEt(Kitap kitap)
@@ -32,8 +37,17 @@ namespace CSProjeDemo1.Entities.Concrete
             if (OduncKitaplarIdListesi.Contains(kitap))
             {
                 kitap.Durum = Durum.OduncAlinabilir;
-                OduncKitaplarIdListesi.Remove(kitap); 
+                OduncKitaplarIdListesi.Remove(kitap);
+                Console.WriteLine("Kitap iade edildi: " + kitap.Baslik);
             }
+            else
+            {
+                Console.WriteLine("Bu kitap ödünç alınmamış.");
+            }
+        }
+        public List<Kitap> OduncKitaplarlistesi()
+        {
+            return OduncKitaplarIdListesi;
         }
     }
 }
